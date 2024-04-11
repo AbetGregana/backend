@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  table {
+    @apply w-full border-collapse;
+  }
+  table th {
+    @apply p-2 text-left;
+  }
+  table tr {
+    @apply border-b border-gray-300;
+  }
+  table tr td {
+    @apply p-2;
+  }
+}
+
+@layer components {
+  .tooltip {
+    @apply relative;
+  }
+  .tooltip::after {
+    @apply content-[attr(data-tooltip)] absolute bottom-full left-0 bg-black/40 text-white text-xs hidden p-1;
+  }
+  .tooltip:hover::after {
+    @apply block;
+  }
+  .input-wrapper {
+    @apply mb-2 relative;
+  }
+  .input-wrapper label {
+    @apply block;
+  }
+  .input-wrapper input {
+    @apply p-2 border border-gray-500 rounded-sm w-full;
+  }
+  .input-wrapper small {
+    @apply absolute top-0 right-0 text-[10px] text-red-800 italic;
+  }
+}
