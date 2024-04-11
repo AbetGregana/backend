@@ -7,14 +7,14 @@ export const departments = [
     isActive: 1,
   },
   {
-    aid: 1,
+    aid: 2,
     department_name: "Web",
     supervisor: "Patrick Reyes",
     supervisor_email: "patrick.reyes@frontlinebusiness.com.ph",
     isActive: 1,
   },
   {
-    aid: 1,
+    aid: 3,
     department_name: "Learning Center Solutions",
     supervisor: "Jhonny Dichoso",
     supervisor_email: "jhonny.dichoso@frontlinebusiness.com.ph",

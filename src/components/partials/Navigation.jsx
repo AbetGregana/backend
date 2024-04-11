@@ -10,7 +10,7 @@ const Navigation = ({ menu }) => {
   return (
     <>
       <nav className="w-[300px]">
-        <ul className="h-full mt-5 p-4 bg-gray-200 space-y-4 ">
+        <ul className="h-full p-4 bg-gray-200 space-y-4 ">
           <li
             className={`px-2 py-1 ${menu === "children" ? "bg-red-400" : ""}`}
           >

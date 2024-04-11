@@ -1,6 +1,6 @@
 import React from "react";
 import { departments } from "./data";
-const DepartmentsTable = ({ children }) => {
+const DepartmentsTable = () => {
   let count = 1;
   return (
     <div>
