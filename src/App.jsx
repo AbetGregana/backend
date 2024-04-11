@@ -4,7 +4,7 @@ import ChildrenList from "./components/pages/developer/children-list/ChildrenLis
 import ParentList from "./components/pages/developer/parent/ParentList";
 import { StoreProvider } from "./store/storeContext";
 import Settings from "./components/pages/developer/settings/Settings";
-import Departments from "./components/pages/developer/settings/department/Departments";
+import DepartmentsList from "./components/pages/developer/settings/department/DepartmentsList";
 
 function App() {
   const queryClient = new QueryClient();
@@ -18,7 +18,10 @@ function App() {
               <Route path={`/children`} element={<ChildrenList />} />
               <Route path={`/parent`} element={<ParentList />} />
               <Route path={`/settings`} element={<Settings />} />
-              <Route path={`/settings/departments`} element={<Departments />} />
+              <Route
+                path={`/settings/departments`}
+                element={<DepartmentsList />}
+              />
             </Routes>
           </Router>
         </StoreProvider>
