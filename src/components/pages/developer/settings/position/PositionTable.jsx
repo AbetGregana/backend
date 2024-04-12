@@ -9,25 +9,20 @@ import {
   MdOutlineEdit,
   MdOutlineRestore,
 } from "react-icons/md";
-const DepartmentsTable = ({ setIsAdd, setDataEdit }) => {
-  const handleEdit = (child) => {
-    setIsAdd(true);
-    setDataEdit(child);
-  };
 
-  let count = 1;
+const PositionTable = () => {
   return (
-    <div className=" relative">
+    <div className="relative">
       <TableLoader />
       <FetchingSpinner />
       <table>
         <thead>
           <tr>
-            <th>#</th>
-            <th>Department Name</th>
-            <th>Supervisor</th>
-            <th>Supervisor Email</th>
-            <th>Action</th>
+            <td className="font-bold">#</td>
+            <td className="font-bold">Position</td>
+            <td className="font-bold">Department</td>
+            <td className="font-bold">Supervisor</td>
+            <td className="font-bold">Action</td>
           </tr>
         </thead>
         <tbody>
@@ -43,9 +38,10 @@ const DepartmentsTable = ({ setIsAdd, setDataEdit }) => {
           </tr>
           <tr>
             <td>1</td>
+            <td>Accounting Staff</td>
             <td>Accounting</td>
             <td>Virgil Calalang</td>
-            <td>virgil.calalang@frontlinebusiness.com.ph</td>
+
             <td>
               <ul className="flex gap-2">
                 <li>
@@ -63,9 +59,9 @@ const DepartmentsTable = ({ setIsAdd, setDataEdit }) => {
           </tr>
           <tr>
             <td>2</td>
+            <td>Full-stack Web Developer</td>
             <td>Web Development</td>
             <td>Patrick Reyes</td>
-            <td>patrick.reyes@frontlinebusiness.com.ph</td>
             <td>
               <ul className="flex gap-2">
                 <li>
@@ -83,9 +79,9 @@ const DepartmentsTable = ({ setIsAdd, setDataEdit }) => {
           </tr>
           <tr>
             <td>3</td>
+            <td>IT Trainer</td>
             <td>Learning Center Solutions</td>
             <td>Jhonny Dichoso</td>
-            <td>jhonny.dichoso@frontlinebusiness.com.ph</td>
             <td>
               <ul className="flex gap-2">
                 <li>
@@ -107,4 +103,4 @@ const DepartmentsTable = ({ setIsAdd, setDataEdit }) => {
   );
 };
 
-export default DepartmentsTable;
+export default PositionTable;

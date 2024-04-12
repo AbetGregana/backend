@@ -3,17 +3,29 @@
 @tailwind utilities;
 
 @layer base {
+  body {
+    @apply font-poppins;
+  }
+  nav ul li:hover {
+    @apply cursor-pointer;
+  }
   table {
     @apply w-full border-collapse;
+  }
+  table thead {
+    @apply bg-gray-200;
   }
   table th {
     @apply p-2 text-left;
   }
   table tr {
-    @apply border-b border-gray-300;
+    @apply border-b border-gray-300 text-[12px];
   }
   table tr td {
-    @apply p-2;
+    @apply p-2 text-[12px];
+  }
+  .list-content .btn-add {
+    @apply text-[12px] flex items-center gap-1 py-2 px-4 bg-red-700 text-white rounded-md;
   }
 }
 

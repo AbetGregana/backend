@@ -2,7 +2,7 @@ import ModalSideWrapper from "@/components/partials/modal/ModalSideWrapper";
 import React from "react";
 import { MdOutlineClose } from "react-icons/md";
 
-const ModalAddDepartments = ({ setIsAdd, dataEdit }) => {
+const ModalAddService = ({ setIsAdd }) => {
   const handleClose = () => {
     setIsAdd(false);
   };
@@ -10,7 +10,7 @@ const ModalAddDepartments = ({ setIsAdd, dataEdit }) => {
     <ModalSideWrapper>
       <main className="flex flex-col  mb-5 max-w-[400px] w-full bg-white p-5">
         <div className="flex justify-between items-center mb-5">
-          <h2>Add Department</h2>
+          <h2>Add Service</h2>
           <button onClick={handleClose}>
             <MdOutlineClose />
           </button>
@@ -39,7 +39,11 @@ const ModalAddDepartments = ({ setIsAdd, dataEdit }) => {
           <button className="px-5 py-2 bg-red-600 text-white" type="submit">
             Save
           </button>
-          <button className="px-5 py-2 bg-gray-200 text-gray-900" type="reset">
+          <button
+            className="px-5 py-2 bg-gray-200 text-gray-900"
+            type="reset"
+            onClick={handleClose}
+          >
             Discard
           </button>
         </div>
@@ -48,4 +52,4 @@ const ModalAddDepartments = ({ setIsAdd, dataEdit }) => {
   );
 };
 
-export default ModalAddDepartments;
+export default ModalAddService;

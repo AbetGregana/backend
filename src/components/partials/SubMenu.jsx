@@ -5,13 +5,15 @@ const SubMenu = ({ menu }) => {
   return (
     <div className="pt-2 ml-5">
       <ul className="flex flex-col gap-2 ">
-        <li
-          className={`px-2 py-1 ${menu === "departments" ? "bg-red-400" : ""}`}
-        >
+        <li>
           <Link to="/settings/departments">Departments</Link>
         </li>
-        <li>Jobs</li>
-        <li>Position</li>
+        <li>
+          <Link to="/settings/services">Services</Link>
+        </li>
+        <li>
+          <Link to="/settings/position">Position</Link>
+        </li>
       </ul>
     </div>
   );

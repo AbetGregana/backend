@@ -5,6 +5,8 @@ import ParentList from "./components/pages/developer/parent/ParentList";
 import { StoreProvider } from "./store/storeContext";
 import Settings from "./components/pages/developer/settings/Settings";
 import DepartmentsList from "./components/pages/developer/settings/department/DepartmentsList";
+import ServicesList from "./components/pages/developer/settings/services/ServicesList";
+import PositionList from "./components/pages/developer/settings/position/PositionList";
 
 function App() {
   const queryClient = new QueryClient();
@@ -22,6 +24,8 @@ function App() {
                 path={`/settings/departments`}
                 element={<DepartmentsList />}
               />
+              <Route path={`/settings/services`} element={<ServicesList />} />
+              <Route path={`/settings/position`} element={<PositionList />} />
             </Routes>
           </Router>
         </StoreProvider>

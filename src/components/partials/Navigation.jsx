@@ -1,34 +1,38 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import SubMenu from "./SubMenu";
-
+import { GoChevronDown } from "react-icons/go";
+import { Link } from "react-router-dom";
 const Navigation = ({ menu }) => {
   const [isOpen, setIsOpen] = React.useState(false);
-  const handleOpen = () => {
-    setIsOpen(!isOpen);
-  };
+
   return (
     <>
       <nav className="w-[300px]">
-        <ul className="h-full p-4 bg-gray-200 space-y-4 ">
+        <ul className="h-full p-4 bg-gray-200 space-y-1 ">
           <li
-            className={`px-2 py-1 ${menu === "children" ? "bg-red-400" : ""}`}
-          >
-            <Link to="/children">Children</Link>
-          </li>
-          <li className={`px-2 py-1 ${menu === "parent" ? "bg-red-400" : ""}`}>
-            <Link to="/parent">Parent</Link>
-          </li>
-          <li className={`px-2 py-1 ${menu === "reports" ? "bg-red-400" : ""}`}>
-            <Link to="/reports">Reports</Link>
-          </li>
-          <li
-            className={`px-2 py-1 ${menu === "settings" ? "bg-red-400" : ""}`}
-            onClick={handleOpen}
+            className={`px-2 py-1 flex items-center justify-between ${
+              menu === "settings" ? "bg-white text-[#1c74e9] rounded-md" : ""
+            }`}
+            onClick={() => setIsOpen(!isOpen)}
           >
             Settings
-            {isOpen && <SubMenu />}
+            <GoChevronDown size={15} />
           </li>
+          {isOpen && (
+            <div className=" ml-5">
+              <ul className="flex flex-col gap-2 ">
+                <li>
+                  <Link to="/settings/departments">Departments</Link>
+                </li>
+                <li>
+                  <Link to="/settings/services">Services</Link>
+                </li>
+                <li>
+                  <Link to="/settings/position">Position</Link>
+                </li>
+              </ul>
+            </div>
+          )}
         </ul>
       </nav>
     </>

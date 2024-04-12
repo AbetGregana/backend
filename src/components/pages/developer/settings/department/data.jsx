@@ -4,7 +4,7 @@ export const departments = [
     department_name: "Accounting",
     supervisor: "Virgil Calalang",
     supervisor_email: "virgil.calalang@frontlinebusiness.com.ph",
-    isActive: 1,
+    isActive: 0,
   },
   {
     aid: 2,

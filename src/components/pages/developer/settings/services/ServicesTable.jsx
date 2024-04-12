@@ -1,3 +1,4 @@
+import useQueryData from "@/components/custom-hooks/useQueryData";
 import NoData from "@/components/partials/NoData";
 import ServerError from "@/components/partials/ServerError";
 import TableLoader from "@/components/partials/TableLoader";
@@ -9,24 +10,19 @@ import {
   MdOutlineEdit,
   MdOutlineRestore,
 } from "react-icons/md";
-const DepartmentsTable = ({ setIsAdd, setDataEdit }) => {
-  const handleEdit = (child) => {
-    setIsAdd(true);
-    setDataEdit(child);
-  };
 
-  let count = 1;
+const ServicesTable = () => {
   return (
-    <div className=" relative">
+    <div className="relative">
       <TableLoader />
       <FetchingSpinner />
       <table>
         <thead>
           <tr>
             <th>#</th>
-            <th>Department Name</th>
-            <th>Supervisor</th>
-            <th>Supervisor Email</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Status</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -43,9 +39,13 @@ const DepartmentsTable = ({ setIsAdd, setDataEdit }) => {
           </tr>
           <tr>
             <td>1</td>
-            <td>Accounting</td>
-            <td>Virgil Calalang</td>
-            <td>virgil.calalang@frontlinebusiness.com.ph</td>
+            <td>Web Hosting</td>
+            <td>Web Development</td>
+            <td>
+              <p className="bg-green-200 w-fit px-3 py-1 rounded-full">
+                Active
+              </p>
+            </td>
             <td>
               <ul className="flex gap-2">
                 <li>
@@ -63,9 +63,13 @@ const DepartmentsTable = ({ setIsAdd, setDataEdit }) => {
           </tr>
           <tr>
             <td>2</td>
-            <td>Web Development</td>
-            <td>Patrick Reyes</td>
-            <td>patrick.reyes@frontlinebusiness.com.ph</td>
+            <td>Bookkeeping</td>
+            <td>Accounting</td>
+            <td>
+              <p className="bg-green-200 w-fit px-3 py-1 rounded-full">
+                Active
+              </p>
+            </td>
             <td>
               <ul className="flex gap-2">
                 <li>
@@ -83,9 +87,13 @@ const DepartmentsTable = ({ setIsAdd, setDataEdit }) => {
           </tr>
           <tr>
             <td>3</td>
+            <td>On-Job-Training</td>
             <td>Learning Center Solutions</td>
-            <td>Jhonny Dichoso</td>
-            <td>jhonny.dichoso@frontlinebusiness.com.ph</td>
+            <td>
+              <p className="bg-green-200 w-fit px-3 py-1 rounded-full">
+                Active
+              </p>
+            </td>
             <td>
               <ul className="flex gap-2">
                 <li>
@@ -103,8 +111,9 @@ const DepartmentsTable = ({ setIsAdd, setDataEdit }) => {
           </tr>
         </tbody>
       </table>
+      {/* )} */}
     </div>
   );
 };
 
-export default DepartmentsTable;
+export default ServicesTable;
