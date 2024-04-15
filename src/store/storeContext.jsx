@@ -9,6 +9,7 @@ const initVal = {
   isRestore: false,
   isDelete: false,
   isAdd: false,
+  isSettingsOpen: false,
 };
 
 const StoreContext = React.createContext();

@@ -37,6 +37,7 @@ const ChildrenList = () => {
         </div>
         {store.isAdd && <ModalAddChildren dataEdit={dataEdit} />}
         {store.success && <ModalSuccess />}
+        {/* {store.success && <ModalSuccess />} */}
         {store.error && <ModalError />}
       </div>
     </>

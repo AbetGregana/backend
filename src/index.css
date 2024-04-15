@@ -45,10 +45,28 @@
   .input-wrapper label {
     @apply block;
   }
+  .input-wrapper label.error-show {
+    @apply text-red-400;
+  }
   .input-wrapper input {
     @apply p-2 border border-gray-500 rounded-sm w-full;
   }
+  .input-wrapper input.error-show {
+    @apply border-red-400;
+  }
   .input-wrapper small {
-    @apply absolute top-0 right-0 text-[10px] text-red-800 italic;
+    @apply absolute top-0 right-0 text-[10px] text-red-400 italic;
+  }
+  nav ul li {
+    @apply text-sm pl-2 border-l;
+  }
+  .submenu ul li {
+    @apply text-xs hover:border-l hover:border-[#1c74e9];
+  }
+  .input-wrapper {
+    @apply relative;
+  }
+  .input-wrapper span {
+    @apply absolute top-0 right-1 text-red-500 text-xs;
   }
 }
