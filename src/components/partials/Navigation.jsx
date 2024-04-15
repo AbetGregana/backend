@@ -12,10 +12,10 @@ const Navigation = ({ menu, submenu }) => {
   return (
     <>
       <nav className="w-[300px]">
-        <ul className="h-full p-4 bg-gray-200 space-y-1 ">
+        <ul className="h-full py-4 bg-gray-200 space-y-1 ">
           <li
-            className={`px-2 py-1 flex items-center justify-between ${
-              menu === "settings" ? "bg-white text-[#1c74e9] rounded-md" : ""
+            className={`px-2 py-2 flex items-center justify-between ${
+              menu === "settings" ? "bg-white text-[#1c74e9]" : ""
             }`}
             onClick={handleOpen}
           >
@@ -24,7 +24,7 @@ const Navigation = ({ menu, submenu }) => {
           </li>
           {store.isSettingsOpen && (
             <div className="submenu ml-5">
-              <ul className="flex flex-col gap-2 ">
+              <ul className="flex flex-col gap-3 mt-3 ">
                 <li
                   className={`${
                     submenu === "departments" ? "border-l border-[#1c74e9]" : ""

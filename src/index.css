@@ -25,7 +25,10 @@
     @apply p-2 text-[12px];
   }
   .list-content .btn-add {
-    @apply text-[12px] flex items-center gap-1 py-2 px-4 bg-red-700 text-white rounded-md;
+    @apply text-[12px] flex items-center gap-1 py-2 px-4 bg-[#1c74e9] text-white rounded-md;
+  }
+  .list-content h2 {
+    @apply text-lg font-bold;
   }
 }
 
@@ -42,19 +45,19 @@
   .input-wrapper {
     @apply mb-2 relative;
   }
-  .input-wrapper label {
-    @apply block;
+  label {
+    @apply block text-xs text-accent;
   }
-  .input-wrapper label.error-show {
+  label.error-show {
     @apply text-red-400;
   }
-  .input-wrapper input {
-    @apply p-2 border border-gray-500 rounded-sm w-full;
+  input {
+    @apply p-2 border border-gray-500 rounded-lg w-full;
   }
-  .input-wrapper input.error-show {
+  input.error-show {
     @apply border-red-400;
   }
-  .input-wrapper small {
+  small {
     @apply absolute top-0 right-0 text-[10px] text-red-400 italic;
   }
   nav ul li {
@@ -68,5 +71,32 @@
   }
   .input-wrapper span {
     @apply absolute top-0 right-1 text-red-500 text-xs;
+  }
+  .table-header h2 {
+    @apply text-sm;
+  }
+  .btn-save {
+    @apply inline-block px-5 py-2 rounded-sm w-full text-xs bg-[#1c74e9] text-white;
+  }
+  .btn-discard {
+    @apply inline-block px-5 py-2 rounded-sm w-full text-xs bg-gray-200 text-gray-900;
+  }
+  .form-input {
+    @apply flex flex-col gap-3;
+  }
+  .modal-form {
+    @apply mt-5 h-[cal(100vh-50px)] flex flex-col;
+  }
+  .modal-title {
+    @apply flex justify-between items-center mb-5;
+  }
+  .modal-title h3 {
+    @apply text-sm font-semibold;
+  }
+  .modal {
+    @apply overflow-y-scroll;
+  }
+  .form-action {
+    @apply z-[999]  bg-pink-400 absolute bottom-0 w-full left-0 p-4;
   }
 }

@@ -4,20 +4,27 @@ import React from "react";
 import PositionTable from "./PositionTable";
 import ModalAddPosition from "./ModalAddPosition";
 import { IoAddCircleSharp } from "react-icons/io5";
+import { StoreContext } from "@/store/storeContext";
+import { setIsAdd, setIsSettingsOpen } from "@/store/storeAction";
 
 const PositionList = () => {
-  const [isAdd, setIsAdd] = React.useState(false);
+  const { store, dispatch } = React.useContext(StoreContext);
+  // const [isAdd, setIsAdd] = React.useState(false);
   const handleAdd = () => {
-    setIsAdd(true);
+    dispatch(setIsAdd(true));
   };
+
+  React.useEffect(() => {
+    dispatch(setIsSettingsOpen(true));
+  }, []);
   return (
     <>
       <Header avatar="AG" />
       <div className="flex gap-3 min-h-[calc(100vh-69px)]">
-        <Navigation menu="jobs" />
+        <Navigation menu="settings" submenu="position" />
         <div className="list-content p-4 w-full">
           <div className=" flex justify-between items-center mb-10">
-            <h2 className="text-2xl mb-5 font-bold">Position List</h2>
+            <h2>Position List</h2>
             <button className="btn-add" onClick={handleAdd}>
               <IoAddCircleSharp size={15} />
               Add
@@ -26,7 +33,7 @@ const PositionList = () => {
           <PositionTable />
         </div>
       </div>
-      {isAdd && <ModalAddPosition setIsAdd={setIsAdd} />}
+      {store.isAdd && <ModalAddPosition setIsAdd={setIsAdd} />}
     </>
   );
 };
