@@ -65,54 +65,55 @@ const ModalAddServices = ({ dataEdit }) => {
 
   return (
     <ModalSideWrapper>
-      <main className="modal flex flex-col max-w-[400px] w-full bg-white px-5 pt-5">
+      <main className="modal ">
         <div className="modal-title ">
           <h3>Add Service</h3>
           <button onClick={handleClose}>
             <MdOutlineClose />
           </button>
         </div>
-
-        <Formik
-          initialValues={initVal}
-          validationSchema={yupSchema}
-          onSubmit={async (values, { setSubmitting, resetForm }) => {
-            // mutate data
-            mutation.mutate(values);
-          }}
-        >
-          {(props) => {
-            return (
-              <Form action="" className="modal-form ">
-                <div className="form-input">
-                  <div className="input-wrapper">
-                    <InputText
-                      label="Services Name"
-                      name="services_name"
-                      type="text"
-                      disabled={mutation.isPending}
-                    />
+        <div className="modal-content">
+          <Formik
+            initialValues={initVal}
+            validationSchema={yupSchema}
+            onSubmit={async (values, { setSubmitting, resetForm }) => {
+              // mutate data
+              mutation.mutate(values);
+            }}
+          >
+            {(props) => {
+              return (
+                <Form action="" className="modal-form ">
+                  <div className="form-input">
+                    <div className="input-wrapper">
+                      <InputText
+                        label="Services Name"
+                        name="services_name"
+                        type="text"
+                        disabled={mutation.isPending}
+                      />
+                    </div>
+                    <div className="input-wrapper">
+                      <InputText
+                        label="Services Department"
+                        name="services_department"
+                        type="text"
+                        disabled={mutation.isPending}
+                      />
+                    </div>
                   </div>
-                  <div className="input-wrapper">
-                    <InputText
-                      label="Services Department"
-                      name="services_department"
-                      type="text"
-                      disabled={mutation.isPending}
-                    />
-                  </div>
-                </div>
-              </Form>
-            );
-          }}
-        </Formik>
-        <div className="form-action flex gap-2">
-          <button className="btn-save" type="submit">
-            Save
-          </button>
-          <button className="btn-discard" type="reset" onClick={handleClose}>
-            Discard
-          </button>
+                </Form>
+              );
+            }}
+          </Formik>
+          <div className="form-action flex gap-2">
+            <button className="btn-save" type="submit">
+              Save
+            </button>
+            <button className="btn-discard" type="reset" onClick={handleClose}>
+              Discard
+            </button>
+          </div>
         </div>
       </main>
     </ModalSideWrapper>
