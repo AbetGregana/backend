@@ -65,7 +65,7 @@ const ModalAddServices = ({ dataEdit }) => {
 
   return (
     <ModalSideWrapper>
-      <main className="modal ">
+      <main className="modal">
         <div className="modal-title ">
           <h3>Add Service</h3>
           <button onClick={handleClose}>

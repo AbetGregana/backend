@@ -22,17 +22,17 @@ const DepartmentsList = () => {
   return (
     <>
       <Header avatar="AG" />
-      <div className="flex gap-3 min-h-[calc(100vh-50px)]">
+      <div className="flex gap-3 min-h-[calc(100vh-70px)]">
         <Navigation menu="settings" submenu="departments" />
-        <div className=" p-4 w-full">
-          <div className="list-content flex justify-between items-center mb-10">
+        <div className=" p-4 pb-0 w-full">
+          <div className="list-content">
             <h2>Department's List</h2>
             <button className="btn-add " onClick={handleAdd}>
               <IoAddCircleSharp size={15} />
               Add
             </button>
           </div>
-          <DepartmentsTable setDataEdit={setDataEdit} />
+          {/* <DepartmentsTable setDataEdit={setDataEdit} /> */}
         </div>
       </div>
       {store.isAdd && <ModalAddDepartments dataEdit={dataEdit} />}

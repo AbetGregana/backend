@@ -10,7 +10,7 @@
     @apply cursor-pointer;
   }
   table {
-    @apply w-full border-collapse;
+    @apply max-w-full w-full border-collapse;
   }
   table thead {
     @apply bg-gray-200;
@@ -24,11 +24,32 @@
   table tr td {
     @apply p-2 text-[12px];
   }
-  .list-content .btn-add {
-    @apply text-[12px] flex items-center gap-1 py-2 px-4 bg-[#1c74e9] text-white rounded-md;
+
+  .list-content {
+    @apply flex justify-between items-center mb-10;
+    h2 {
+      @apply text-lg font-bold;
+    }
   }
-  .list-content h2 {
-    @apply text-lg font-bold;
+  .toggle-menu {
+    @apply md:hidden;
+    span {
+      @apply w-[2rem] h-[.2rem] bg-gray-800 block rounded-full  transition-all;
+    }
+    span:nth-child(2) {
+      @apply my-1;
+    }
+  }
+  .toggle-menu.open {
+    span:first-child {
+      @apply rotate-[225deg] translate-y-2 transition-all;
+    }
+    span:nth-child(2) {
+      @apply opacity-0;
+    }
+    span:last-child {
+      @apply rotate-[-225deg] -translate-y-[.4rem] transition-all;
+    }
   }
 }
 
@@ -64,7 +85,7 @@
     @apply text-sm pl-2 border-l;
   }
   .submenu ul li {
-    @apply text-xs hover:border-l hover:border-[#1c74e9];
+    @apply text-xs border-l-2  hover:border-[#1c74e9];
   }
   .input-wrapper {
     @apply relative;
@@ -75,32 +96,39 @@
   .table-header h2 {
     @apply text-sm;
   }
+  .modal {
+    @apply h-full flex flex-col max-w-[400px] w-full p-5
+     bg-white;
+    .modal-title {
+      @apply flex justify-between items-center mb-5;
+    }
+    .modal-title h3 {
+      @apply text-sm font-semibold;
+    }
+    .modal-content {
+      @apply overflow-y-auto bg-white flex flex-col justify-between
+      h-full;
+    }
+    .modal-form {
+      @apply flex flex-col justify-between;
+    }
+    .form-action {
+      @apply z-[999] bg-white;
+      .form-btn {
+        @apply flex gap-2;
+      }
+    }
+  }
+
+  /* flex flex-col justify-between */
+
   .btn-save {
     @apply inline-block px-5 py-2 rounded-sm w-full text-xs bg-[#1c74e9] text-white;
   }
   .btn-discard {
     @apply inline-block px-5 py-2 rounded-sm w-full text-xs bg-gray-200 text-gray-900;
   }
-  .form-input {
-    @apply flex flex-col gap-3;
-  }
-  .modal-form {
-    @apply mt-5  flex flex-col;
-  }
-  .modal-title {
-    @apply flex justify-between items-center mb-5;
-  }
-  .modal-title h3 {
-    @apply text-sm font-semibold;
-  }
-  .modal {
-    @apply relative flex flex-col max-w-[400px] w-full pt-5 px-5
-    bg-white;
-  }
-  .form-action {
-    @apply z-[999] pt-2 pb-4;
-  }
-  .modal-content {
-    @apply h-screen  flex flex-col justify-between overflow-y-scroll;
+  .btn-add {
+    @apply text-[12px] flex items-center gap-1 py-2 px-4 bg-[#1c74e9] text-white rounded-md;
   }
 }

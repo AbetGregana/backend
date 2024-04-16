@@ -11,8 +11,8 @@ const Navigation = ({ menu, submenu }) => {
   console.log(setIsSettingsOpen);
   return (
     <>
-      <nav className="w-[300px]">
-        <ul className="h-full py-4 bg-gray-200 space-y-1 ">
+      <nav className="w-[300px] ">
+        <ul className="overflow-auto pt-4 bg-gray-200 h-full">
           <li
             className={`px-2 py-2 flex items-center justify-between ${
               menu === "settings" ? "bg-white text-[#1c74e9]" : ""
@@ -27,7 +27,9 @@ const Navigation = ({ menu, submenu }) => {
               <ul className="flex flex-col gap-3 mt-3 ">
                 <li
                   className={`${
-                    submenu === "departments" ? "border-l border-[#1c74e9]" : ""
+                    submenu === "departments"
+                      ? "border-l-2 border-[#1c74e9] text-[#1c74e9]"
+                      : ""
                   }`}
                 >
                   <Link to="/settings/departments">Departments</Link>
@@ -35,7 +37,7 @@ const Navigation = ({ menu, submenu }) => {
                 <li
                   className={`${
                     submenu === "services"
-                      ? "border-l border-accent text-[#1c74e9]"
+                      ? "border-l-2 border-accent text-[#1c74e9]"
                       : ""
                   }`}
                 >
@@ -44,7 +46,7 @@ const Navigation = ({ menu, submenu }) => {
                 <li
                   className={`${
                     submenu === "position"
-                      ? "border-l border-[#1c74e9] text-[#1c74e9]"
+                      ? "border-l-2 border-[#1c74e9] text-[#1c74e9]"
                       : ""
                   }`}
                 >

@@ -20,17 +20,18 @@ const PositionList = () => {
   return (
     <>
       <Header avatar="AG" />
-      <div className="flex gap-3 min-h-[calc(100vh-69px)]">
+      <div className="flex gap-3 min-h-[calc(100vh-70px)]">
         <Navigation menu="settings" submenu="position" />
-        <div className="list-content p-4 w-full">
-          <div className=" flex justify-between items-center mb-10">
+        <div className="p-4 pb-0 w-full">
+          <div className="list-content">
             <h2>Position List</h2>
             <button className="btn-add" onClick={handleAdd}>
               <IoAddCircleSharp size={15} />
               Add
             </button>
+
+            {/* <PositionTable /> */}
           </div>
-          <PositionTable />
         </div>
       </div>
       {store.isAdd && <ModalAddPosition setIsAdd={setIsAdd} />}

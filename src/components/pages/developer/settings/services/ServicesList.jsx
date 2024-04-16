@@ -19,17 +19,17 @@ const ServicesList = () => {
   return (
     <>
       <Header avatar="AG" />
-      <div className="flex gap-3 min-h-[calc(100vh-69px)]">
+      <div className="flex gap-3 min-h-[calc(100vh-70px)]">
         <Navigation menu="settings" submenu="services" />
         <div className=" p-4 w-full">
-          <div className="list-content flex justify-between items-center mb-10">
+          <div className="list-content">
             <h2>Services List</h2>
             <button className="btn-add" onClick={handleAdd}>
               <IoAddCircleSharp size={15} />
               Add
             </button>
           </div>
-          <ServicesTable />
+          {/* <ServicesTable /> */}
         </div>
       </div>
       {store.isAdd && <ModalAddServices setIsAdd={setIsAdd} />}

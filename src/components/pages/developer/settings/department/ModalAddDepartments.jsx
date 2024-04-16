@@ -62,66 +62,69 @@ const ModalAddDepartments = ({ dataEdit }) => {
 
   return (
     <ModalSideWrapper>
-      <main className="flex flex-col max-w-[400px] w-full bg-white p-5">
-        <div className="flex justify-between items-center mb-5">
+      <main className="modal">
+        <div className="modal-title">
           <h2>Add Department</h2>
           <button onClick={handleClose}>
             <MdOutlineClose />
           </button>
         </div>
-
-        <Formik
-          initialValues={initVal}
-          validationSchema={yupSchema}
-          onSubmit={async (values, { setSubmitting, resetForm }) => {
-            // mutate data
-            mutation.mutate(values);
-          }}
-        >
-          {(props) => {
-            return (
-              <Form className="h-full flex flex-col">
-                <div className="grow">
-                  <div className="input-wrapper">
-                    <InputText
-                      label="Department Name"
-                      name="department_name"
-                      type="text"
-                      disabled={mutation.isPending}
-                    />
-                  </div>
-                  <div className="input-wrapper">
-                    <InputText
-                      label="Supervisor"
-                      name="department_supervisor_name"
-                      type="text"
-                      disabled={mutation.isPending}
-                    />
-                  </div>
-                  <div className="input-wrapper">
-                    <InputText
-                      label="Supervisor Email "
-                      name="department_supervisor_email"
-                      type="email"
-                      disabled={mutation.isPending}
-                    />
-                  </div>
-                </div>
-              </Form>
-            );
-          }}
-        </Formik>
-        <div className="form-action flex gap-2">
-          <button className="px-5 py-2 bg-red-600 text-white" type="submit">
-            Save
-          </button>
-          <button
-            className="px-5 py-2 bg-gray-200 text-gray-900"
-            type="reset"
-            onClick={handleClose}
+        <div className="modal-content">
+          <Formik
+            initialValues={initVal}
+            validationSchema={yupSchema}
+            onSubmit={async (values, { setSubmitting, resetForm }) => {
+              // mutate data
+              mutation.mutate(values);
+            }}
           >
-            Discard
-          </button>
+            {(props) => {
+              return (
+                <Form className="modal-form">
+                  <div className="form-input">
+                    <div className="input-wrapper">
+                      <InputText
+                        label="Department Name"
+                        name="department_name"
+                        type="text"
+                        disabled={mutation.isPending}
+                      />
+                    </div>
+                    <div className="input-wrapper">
+                      <InputText
+                        label="Supervisor"
+                        name="department_supervisor_name"
+                        type="text"
+                        disabled={mutation.isPending}
+                      />
+                    </div>
+                    <div className="input-wrapper">
+                      <InputText
+                        label="Supervisor Email "
+                        name="department_supervisor_email"
+                        type="email"
+                        disabled={mutation.isPending}
+                      />
+                    </div>
+                  </div>
+                </Form>
+              );
+            }}
+          </Formik>
+          <div className="form-action ">
+            <div className="form-btn">
+              <button className="btn-save" type="submit">
+                Save
+              </button>
+              <button
+                className="btn-discard"
+                type="reset"
+                onClick={handleClose}
+              >
+                Discard
+              </button>
+            </div>
+          </div>
         </div>
       </main>
     </ModalSideWrapper>
