@@ -24,7 +24,7 @@ const Navigation = ({ menu, submenu }) => {
           </li>
           {store.isSettingsOpen && (
             <div className="submenu ml-5">
-              <ul className="flex flex-col gap-3 mt-3 ">
+              <ul className="flex flex-col gap-3 my-3 ">
                 <li
                   className={`${
                     submenu === "departments"
@@ -55,6 +55,13 @@ const Navigation = ({ menu, submenu }) => {
               </ul>
             </div>
           )}
+          <li
+            className={`px-2 py-2 flex items-center justify-between ${
+              menu === "table-freeze" ? "bg-white text-[#1c74e9]" : ""
+            }`}
+          >
+            TABLE FREEZE
+          </li>
         </ul>
       </nav>
     </>

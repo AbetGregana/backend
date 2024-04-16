@@ -24,7 +24,6 @@
   table tr td {
     @apply p-2 text-[12px];
   }
-
   .list-content {
     @apply flex justify-between items-center mb-10;
     h2 {
@@ -49,6 +48,36 @@
     }
     span:last-child {
       @apply rotate-[-225deg] -translate-y-[.4rem] transition-all;
+    }
+  }
+  .table-freeze {
+    @apply max-w-[1200px] max-h-[500px] overflow-auto;
+    table {
+      @apply overflow-hidden border-separate min-w-max z-10;
+      thead {
+        @apply sticky top-0 w-max z-50 min-h-max;
+      }
+      /* tr th {
+        @apply min-w-[10rem] top-0 z-10;
+      } */
+      tr th:first-child,
+      th:first-child {
+        @apply sticky w-[120px] left-0 z-[2];
+      }
+      tr th:nth-child(2),
+      th:nth-child(2) {
+        @apply sticky w-[120px] left-0 z-[3];
+      }
+      tr th:nth-child(3),
+      th:nth-child(3) {
+        @apply sticky w-[120px] left-0 z-[4];
+      }
+      tr td:first-child,
+      tr td:nth-child(2),
+      tr td:nth-child(3),
+      tr td:nth-child(4) {
+        @apply w-[120px] sticky left-0 z-10 bg-yellow-400;
+      }
     }
   }
 }
