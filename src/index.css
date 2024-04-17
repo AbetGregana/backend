@@ -33,7 +33,7 @@
   .toggle-menu {
     @apply md:hidden;
     span {
-      @apply w-[2rem] h-[.2rem] bg-gray-800 block rounded-full  transition-all;
+      @apply w-[1.5rem] h-[.2rem] bg-gray-800 block rounded-full  transition-all;
     }
     span:nth-child(2) {
       @apply my-1;
@@ -101,12 +101,21 @@
 @layer components {
   header {
     @apply relative border-b-2 border-[#1c74e9] px-5 py-2 flex justify-between items-center;
+    a {
+      img {
+        @apply w-[9rem];
+      }
+    }
     .avatar {
       @apply w-[40px] h-[40px] bg-[#1c74e9] rounded-full grid 
-      place-content-center text-white border-[1px] border-transparent hover:cursor-pointer;
+      place-content-center text-white border-[1px] border-transparent hover:cursor-pointer
+      hover:border-blue-950;
+    }
+    .avatar.open {
+      @apply border-blue-950;
     }
     .avatar-details {
-      @apply bg-white shadow-2xl absolute  right-10 bottom-[-13rem]
+      @apply bg-white shadow-2xl absolute  right-10 bottom-[-13.5rem]
       rounded-md z-[100];
       .avatar-banner {
         .avatar-img {

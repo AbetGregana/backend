@@ -16,7 +16,7 @@ const TableFreezeList = () => {
   return (
     <>
       <Header avatar="AG" />
-      <div className="flex gap-3 min-h-[calc(100vh-70px)]">
+      <div className="flex min-h-[calc(100vh-70px)]">
         <Navigation menu="table-freeze" />
         <div className=" p-4 pb-0 w-full">
           <div className="list-content">

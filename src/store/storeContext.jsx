@@ -11,6 +11,7 @@ const initVal = {
   isAdd: false,
   isSettingsOpen: false,
   isOpen: false,
+  isActive: false,
 };
 
 const StoreContext = React.createContext();

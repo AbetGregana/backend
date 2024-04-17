@@ -61,6 +61,11 @@ export const StoreReducer = (state, action) => {
         ...state,
         isOpen: action.payload,
       };
+    case "IS_ACTIVE":
+      return {
+        ...state,
+        isActive: action.payload,
+      };
 
     default:
       return state;

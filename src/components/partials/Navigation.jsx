@@ -14,7 +14,7 @@ const Navigation = ({ menu, submenu }) => {
       <nav className="w-[300px] ">
         <ul className="overflow-auto pt-4 bg-gray-200 h-full">
           <li
-            className="px-2 py-2 flex items-center justify-between"
+            className="px-5 py-2 flex items-center justify-between"
             onClick={handleOpen}
           >
             SETTINGS
@@ -54,7 +54,7 @@ const Navigation = ({ menu, submenu }) => {
             </div>
           )}
           <li
-            className={`px-2 py-2 flex items-center justify-between ${
+            className={`px-5 py-2 flex items-center justify-between ${
               menu === "table-freeze" ? "bg-white text-[#1c74e9]" : ""
             }`}
           >

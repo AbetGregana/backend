@@ -4,13 +4,19 @@ import { MdOutlineEmail } from "react-icons/md";
 import { HiOutlineUserCircle } from "react-icons/hi2";
 import { IoIosLogOut } from "react-icons/io";
 import { StoreContext } from "@/store/storeContext";
-import { setIsOpen } from "@/store/storeAction";
+import { setIsActive, setIsOpen } from "@/store/storeAction";
 const Header = ({ avatar }) => {
   const toggleM = document.querySelector(".toggle-menu");
   const { store, dispatch } = React.useContext(StoreContext);
+
   const handleOpen = () => {
     dispatch(setIsOpen(!store.isOpen));
   };
+
+  const handleClick = () => {
+    dispatch(setIsActive(store.isActive));
+  };
+
   return (
     <>
       <header>
@@ -28,10 +34,8 @@ const Header = ({ avatar }) => {
           <img src="/src/components/partials/svg-icon/logo-fbs.png" alt="" />
         </a>
         <div
-          className={`avatar ${
-            store.isOpen ? "border-red-400" : "border-transparent"
-          }`}
-          onClick={handleOpen}
+          className={`avatar ${store.isActive ? "border-blue-950" : ""}`}
+          onClick={(handleOpen, handleClick)}
         >
           {avatar}
         </div>
