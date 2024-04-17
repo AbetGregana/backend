@@ -60,3 +60,9 @@ export const setIsSettingsOpen = (val) => {
     payload: val,
   };
 };
+export const setIsOpen = (val) => {
+  return {
+    type: "IS_OPEN",
+    payload: val,
+  };
+};

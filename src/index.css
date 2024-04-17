@@ -51,14 +51,14 @@
     }
   }
   .table-freeze {
-    @apply max-w-[1200px] max-h-[500px] overflow-auto;
+    @apply max-w-[1550px] max-h-[500px] overflow-auto;
     table {
       @apply border-collapse min-w-max z-10 relative w-full;
       thead {
         @apply sticky top-0 w-max z-50 min-h-max;
       }
       tr th {
-        @apply w-[10rem] top-0 z-10 bg-blue-400;
+        @apply w-[10rem] top-0 z-10 bg-gray-300;
       }
       tr td:first-child,
       th:first-child {
@@ -99,6 +99,45 @@
 }
 
 @layer components {
+  header {
+    @apply relative border-b-2 border-[#1c74e9] px-5 py-2 flex justify-between items-center;
+    .avatar {
+      @apply w-[40px] h-[40px] bg-[#1c74e9] rounded-full grid 
+      place-content-center text-white border-[1px] border-transparent hover:cursor-pointer;
+    }
+    .avatar-details {
+      @apply bg-white shadow-2xl absolute  right-10 bottom-[-13rem]
+      rounded-md z-[100];
+      .avatar-banner {
+        .avatar-img {
+          @apply min-h-[60px] bg-blue-400 rounded-tl-md rounded-tr-md flex items-center justify-center;
+          figure {
+            @apply text-white text-[2rem] bg-gray-400 w-fit p-3 rounded-full 
+            border-[1px] border-white translate-y-7;
+          }
+        }
+      }
+      .avatar-name {
+        @apply flex flex-col mt-8 p-2;
+        p {
+          @apply text-xs;
+        }
+        p:first-child {
+          @apply font-semibold text-center justify-center;
+        }
+        p:last-child {
+          @apply flex items-center gap-2 justify-between;
+        }
+      }
+      .avatar-actions {
+        @apply p-2 flex flex-col;
+        button {
+          @apply flex text-xs items-center gap-2 py-2 border-t-[1px] border-gray-200;
+        }
+      }
+    }
+  }
+
   .tooltip {
     @apply relative;
   }

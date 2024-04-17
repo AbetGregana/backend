@@ -1,10 +1,19 @@
 import React from "react";
-
+import { FaUser } from "react-icons/fa";
+import { MdOutlineEmail } from "react-icons/md";
+import { HiOutlineUserCircle } from "react-icons/hi2";
+import { IoIosLogOut } from "react-icons/io";
+import { StoreContext } from "@/store/storeContext";
+import { setIsOpen } from "@/store/storeAction";
 const Header = ({ avatar }) => {
   const toggleM = document.querySelector(".toggle-menu");
+  const { store, dispatch } = React.useContext(StoreContext);
+  const handleOpen = () => {
+    dispatch(setIsOpen(!store.isOpen));
+  };
   return (
     <>
-      <header className="border-b-2 border-[#1c74e9] px-5 py-2 flex justify-between items-center">
+      <header>
         <div
           className="toggle-menu"
           onClick={() => {
@@ -18,9 +27,41 @@ const Header = ({ avatar }) => {
         <a href="#">
           <img src="/src/components/partials/svg-icon/logo-fbs.png" alt="" />
         </a>
-        <div className="w-[40px] h-[40px] bg-red-300 rounded-full grid place-content-center">
+        <div
+          className={`avatar ${
+            store.isOpen ? "border-red-400" : "border-transparent"
+          }`}
+          onClick={handleOpen}
+        >
           {avatar}
         </div>
+        {store.isOpen && (
+          <div className="avatar-details">
+            <div className="avatar-banner">
+              <div className="avatar-img">
+                <figure>
+                  <FaUser />
+                </figure>
+              </div>
+              <div className="avatar-name">
+                <p>Ansbert Gregana - Admin</p>
+                <p>
+                  <MdOutlineEmail />
+                  <span>ansbert.gregana@frontlinebusiness.com.ph</span>
+                </p>
+              </div>
+              <div className="avatar-actions">
+                <button>
+                  <HiOutlineUserCircle />
+                  <span>Account</span>
+                </button>
+                <button>
+                  <IoIosLogOut /> <span>Logout</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </header>
     </>
   );

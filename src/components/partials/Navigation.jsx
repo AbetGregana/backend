@@ -8,15 +8,13 @@ const Navigation = ({ menu, submenu }) => {
   const handleOpen = () => {
     dispatch(setIsSettingsOpen(!store.isSettingsOpen));
   };
-  console.log(setIsSettingsOpen);
+
   return (
     <>
       <nav className="w-[300px] ">
         <ul className="overflow-auto pt-4 bg-gray-200 h-full">
           <li
-            className={`px-2 py-2 flex items-center justify-between ${
-              menu === "settings" ? "bg-white text-[#1c74e9]" : ""
-            }`}
+            className="px-2 py-2 flex items-center justify-between"
             onClick={handleOpen}
           >
             SETTINGS
