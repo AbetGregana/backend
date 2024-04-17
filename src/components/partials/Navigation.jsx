@@ -60,7 +60,8 @@ const Navigation = ({ menu, submenu }) => {
               menu === "table-freeze" ? "bg-white text-[#1c74e9]" : ""
             }`}
           >
-            TABLE FREEZE
+            {" "}
+            <Link to="/table-freeze">TABLE FREEZE</Link>
           </li>
         </ul>
       </nav>
