@@ -22,8 +22,8 @@ const Navigation = ({ menu, submenu }) => {
         <div className="navigation-wrapper">
           {/* {store.isShow && ( */}
           <div
-            className={`navigation-content duration-500 translate-x-0 w-[200px] ${
-              store.isShow ? "bg-blue-600 " : "-translate-x-[200px]"
+            className={`navigation-content duration-500 -translate-x-[200px] w-[200px] ${
+              store.isShow ? " translate-x-0 " : "-translate-x-[200px]"
             }`}
           >
             <nav className="w-[200px]">
@@ -81,7 +81,7 @@ const Navigation = ({ menu, submenu }) => {
           {/* // )} */}
           <div
             className={`toggle-menu duration-500 translate-x-0  ${
-              !store.isShow && "-translate-x-[200px]"
+              !store.isShow && "translate-x-[-200px]"
             }`}
           >
             <AiOutlineMenuFold size={25} onClick={handleShow} />
