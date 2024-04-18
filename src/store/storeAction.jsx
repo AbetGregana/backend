@@ -68,9 +68,9 @@ export const setIsOpen = (val) => {
   };
 };
 
-export const setIsActive = (val) => {
+export const setIsShow = (val) => {
   return {
-    type: "IS_ACTIVE",
+    type: "IS_SHOW",
     payload: val,
   };
 };

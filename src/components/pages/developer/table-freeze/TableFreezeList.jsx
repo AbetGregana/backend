@@ -3,22 +3,22 @@ import Navigation from "@/components/partials/Navigation";
 import { setIsAdd } from "@/store/storeAction";
 import { StoreContext } from "@/store/storeContext";
 import React from "react";
-import { IoAddCircleSharp } from "react-icons/io5";
-import TableFreezeTable from "./TableFreezeTable";
+// import { IoAddCircleSharp } from "react-icons/io5";
+// import TableFreezeTable from "./TableFreezeTable";
 
 const TableFreezeList = () => {
-  const { store, dispatch } = React.useContext(StoreContext);
-  const [dataEdit, setDataEdit] = React.useState(null);
-  const handleAdd = () => {
-    dispatch(setIsAdd(true));
-    setDataEdit(null);
-  };
+  // const { store, dispatch } = React.useContext(StoreContext);
+  // const [dataEdit, setDataEdit] = React.useState(null);
+  // const handleAdd = () => {
+  //   dispatch(setIsAdd(true));
+  //   setDataEdit(null);
+  // };
   return (
     <>
       <Header avatar="AG" />
-      <div className="flex min-h-[calc(100vh-70px)]">
+      <div className="flex min-h-[calc(100vh-70px)] gap-4 relative">
         <Navigation menu="table-freeze" />
-        <div className=" p-4 pb-0 w-full">
+        <div className=" p-4 pt-1 pb-0 w-full">
           <div className="list-content">
             <h2>Table's List</h2>
             {/* <button className="btn-add " onClick={handleAdd}>
@@ -26,7 +26,7 @@ const TableFreezeList = () => {
               Add
             </button> */}
           </div>
-          <TableFreezeTable />
+          {/* <TableFreezeTable /> */}
           {/* <DepartmentsTable setDataEdit={setDataEdit} /> */}
         </div>
       </div>
