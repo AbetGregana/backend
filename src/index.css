@@ -61,10 +61,10 @@
         @apply sticky min-w-[4rem] left-0 z-[2] bg-red-200;
       }
       th:nth-child(2) {
-        @apply sticky min-w-[4rem] max-w-[8rem] left-[64px] z-[2] bg-blue-500;
+        @apply sticky min-w-[4rem] max-w-[8rem]  left-[64px] z-[2] bg-blue-500;
       }
       tr td:nth-child(2) {
-        @apply sticky left-[64px] z-[2] max-w-[10rem] h-full bg-blue-300 flex flex-wrap;
+        @apply sticky left-[64px] h-full bg-blue-300;
       }
 
       /* tr td:first-child {
