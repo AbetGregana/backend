@@ -64,7 +64,10 @@
         @apply sticky min-w-[4rem] max-w-[8rem]  left-[64px] z-[2] bg-blue-500;
       }
       tr td:nth-child(2) {
-        @apply sticky left-[64px] h-full bg-blue-300;
+        @apply sticky left-[64px] max-w-[2rem] bg-blue-300;
+      }
+      tr td {
+        @apply break-words;
       }
 
       /* tr td:first-child {
