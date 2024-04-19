@@ -66,6 +66,11 @@ export const StoreReducer = (state, action) => {
         ...state,
         isShow: action.payload,
       };
+    // case "IS_CLICK_OUTSIDE":
+    //   return {
+    //     ...state,
+    //     isClickOutside: action.payload,
+    //   };
 
     default:
       return state;

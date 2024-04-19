@@ -25,16 +25,17 @@
     @apply p-2 text-[12px];
   }
   .list-content {
-    @apply flex justify-between items-center mb-10;
+    @apply flex justify-between items-center mb-10 px-2;
     h2 {
       @apply text-lg font-bold;
     }
   }
-  /* .navigation {
-    @apply absolute;
-  } */
+
+  .navigation {
+    @apply absolute top-0;
+  }
   .navigation-content {
-    @apply h-[calc(100vh-58px)] bg-gray-200;
+    @apply bg-gray-200 h-screen;
   }
   .navigation-wrapper {
     @apply flex;
@@ -43,32 +44,30 @@
     @apply p-1 bg-gray-200 w-fit h-fit hover:cursor-pointer z-[999];
   }
   .table-freeze {
-    @apply max-w-[1550px] max-h-[500px] overflow-auto;
+    @apply max-w-full max-h-[500px] overflow-auto;
     table {
       @apply border-collapse min-w-max z-10 relative w-full;
       thead {
         @apply sticky top-0 w-max z-50 min-h-max;
       }
       tr th {
-        @apply w-[10rem] top-0 z-10 bg-gray-300;
+        @apply max-w-[8rem] top-0 z-10 bg-gray-300;
       }
-      tr td:first-child,
+
       th:first-child {
-        @apply sticky w-[3rem] left-0 z-[2];
-      }
-      tr td:nth-child(2),
-      th:nth-child(2) {
-        @apply sticky w-[10rem] left-[48px] z-[3];
-      }
-      tr td:nth-child(3),
-      th:nth-child(3) {
-        @apply sticky w-[10rem] left-[208px] z-[4];
-      }
-      tr td:nth-child(4),
-      th:nth-child(4) {
-        @apply sticky w-[10rem] left-[368px] z-[5];
+        @apply sticky min-w-[4rem] left-0 z-[2] bg-red-400;
       }
       tr td:first-child {
+        @apply sticky min-w-[4rem] left-0 z-[2] bg-red-200;
+      }
+      th:nth-child(2) {
+        @apply sticky min-w-[4rem] max-w-[8rem] left-[64px] z-[2] bg-blue-500;
+      }
+      tr td:nth-child(2) {
+        @apply sticky left-[64px] z-[2] max-w-[10rem] h-full bg-blue-300 flex flex-wrap;
+      }
+
+      /* tr td:first-child {
         @apply sticky w-max left-0 z-[2] bg-yellow-500;
       }
       tr td:nth-child(2) {
@@ -79,7 +78,7 @@
       }
       tr td:nth-child(4) {
         @apply sticky w-max left-[368px] z-[5] bg-yellow-500;
-      }
+      } */
       /* tr td:first-child,
       tr td:nth-child(2),
       tr td:nth-child(3),
@@ -92,7 +91,8 @@
 
 @layer components {
   header {
-    @apply relative border-b-2 border-[#1c74e9] px-5 py-2 flex justify-between items-center;
+    @apply relative border-b-2 border-[#1c74e9] 
+    px-5 py-2 flex justify-between items-center z-50 bg-white;
     a {
       img {
         @apply w-[9rem];

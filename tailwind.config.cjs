@@ -3,6 +3,7 @@ export default {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      screens: {},
       colors: {
         accent: "#1c74e9",
       },

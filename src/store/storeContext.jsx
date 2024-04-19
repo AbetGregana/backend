@@ -11,7 +11,8 @@ const initVal = {
   isAdd: false,
   isSettingsOpen: false,
   isOpen: false,
-  isShow: true,
+  isShow: false,
+  // setIsClickOutside: false,
 };
 
 const StoreContext = React.createContext();

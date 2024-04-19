@@ -16,9 +16,7 @@ const Header = ({ avatar }) => {
   return (
     <>
       <header>
-        <a href="#">
-          <img src="/src/components/partials/svg-icon/logo-fbs.png" alt="" />
-        </a>
+        <div></div>
         <div
           className={`avatar  ${store.isOpen && "border-2 border-blue-950"}`}
           onClick={() => handleOpen()}

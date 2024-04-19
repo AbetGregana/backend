@@ -1,9 +1,11 @@
 import { setIsSettingsOpen, setIsShow } from "@/store/storeAction";
 import { StoreContext } from "@/store/storeContext";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { GoChevronDown } from "react-icons/go";
 import { Link } from "react-router-dom";
 import { AiOutlineMenuFold } from "react-icons/ai";
+import ModalSideWrapper from "./modal/ModalSideWrapper";
+
 // import { AiOutlineMenuUnfold } from "react-icons/ai";
 const Navigation = ({ menu, submenu }) => {
   const { store, dispatch } = React.useContext(StoreContext);
@@ -14,22 +16,44 @@ const Navigation = ({ menu, submenu }) => {
     dispatch(setIsShow(!store.isShow));
   };
 
-  console.log(store.isShow);
-
+  //used for closing when clicked outside the component
+  let navRef = useRef();
+  useEffect(() => {
+    let handler = (event) => {
+      if (!navRef.current.contains(event.target)) {
+        dispatch(setIsShow(false));
+        console.log(navRef.current);
+      }
+    };
+    document.addEventListener("click", handler);
+    return () => {
+      document.removeEventListener("click", handler);
+    };
+  });
   return (
     <>
+      {store.isShow && <ModalSideWrapper />}
       <div className="navigation">
-        <div className="navigation-wrapper">
-          {/* {store.isShow && ( */}
+        <div className="navigation-wrapper" ref={navRef}>
           <div
-            className={`navigation-content duration-500 -translate-x-[200px] w-[200px] ${
-              store.isShow ? " translate-x-0 " : "-translate-x-[200px]"
+            className={`navigation-content duration-200
+            -translate-x-[200px] w-[200px] z-[999] ${
+              store.isShow ? "translate-x-0" : "-translate-x-[200px]"
             }`}
           >
+            <a href="#" className="flex justify-center p-2">
+              <img
+                src="/src/components/partials/svg-icon/logo-fbs.png"
+                alt=""
+                className="w-[10rem]"
+              />
+            </a>
             <nav className="w-[200px]">
-              <ul className="overflow-auto pt-4  h-full">
+              <ul className="overflow-auto h-full pt-2">
                 <li
-                  className="px-5 py-2 flex items-center justify-between"
+                  className={`px-5 py-2 flex items-center justify-between ${
+                    menu === "settings" ? "bg-white text-[#1c74e9]" : ""
+                  }`}
                   onClick={handleOpen}
                 >
                   SETTINGS
@@ -78,9 +102,8 @@ const Navigation = ({ menu, submenu }) => {
               </ul>
             </nav>
           </div>
-          {/* // )} */}
           <div
-            className={`toggle-menu duration-500 translate-x-0  ${
+            className={`toggle-menu duration-200 translate-x-0  ${
               !store.isShow && "translate-x-[-200px]"
             }`}
           >

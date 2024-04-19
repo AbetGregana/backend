@@ -26,7 +26,6 @@ const TableFreezeTable = () => {
               <td>1</td>
               <td>KamoteKamoteKamoteKamoteKamote</td>
               <td>Kamote</td>
-              <td>KamoteKamoteKamoteKamoteKamoteKamoteKamote</td>
               <td>Kamote</td>
               <td>Kamote</td>
               <td>Kamote</td>
@@ -34,7 +33,8 @@ const TableFreezeTable = () => {
               <td>Kamote</td>
               <td>Kamote</td>
               <td>Kamote</td>
-              <td>KamoteKamoteKamoteKamoteKamote</td>
+              <td>Kamote</td>
+              <td>Kamote</td>
             </tr>
             <tr>
               <td>2</td>
