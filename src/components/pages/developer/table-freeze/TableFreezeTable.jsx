@@ -18,6 +18,10 @@ const TableFreezeTable = () => {
               <th>Religion</th>
               <th>Educational Attainment</th>
               <th>Current Job Position</th>
+              <th>Annual Salary</th>
+              <th>Loans</th>
+              <th>Assets</th>
+              <th>Accounts</th>
               <th>Years of Experience</th>
             </tr>
           </thead>
