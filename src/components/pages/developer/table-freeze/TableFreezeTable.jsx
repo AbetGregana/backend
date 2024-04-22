@@ -20,15 +20,24 @@ const TableFreezeTable = () => {
               <th>Current Job Position</th>
               <th>Annual Salary</th>
               <th>Loans</th>
-              <th>Assets</th>
               <th>Accounts</th>
+              <th>Current Job Position</th>
               <th>Years of Experience</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>1</td>
-              <td>KamoteKamoteKamoteKamoteKamote</td>
+              <td>
+                Kamote
+                KamoteKamoteKamoteKamoteKamoteKamoteKamoteKamoteKamoteKamoteKamote
+              </td>
+              <td>Kamote</td>
+              <td>
+                KamoteKamoteKamoteKamoteKamoteKamoteKamoteKamoteKamoteKamoteKamote
+              </td>
+              <td>Kamote</td>
+              <td>Kamote</td>
               <td>Kamote</td>
               <td>Kamote</td>
               <td>Kamote</td>

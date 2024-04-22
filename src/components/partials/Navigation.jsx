@@ -17,24 +17,24 @@ const Navigation = ({ menu, submenu }) => {
   };
 
   //used for closing when clicked outside the component
-  let navRef = useRef();
-  useEffect(() => {
-    let handler = (event) => {
-      if (!navRef.current.contains(event.target)) {
-        dispatch(setIsShow(false));
-        console.log(navRef.current);
-      }
-    };
-    document.addEventListener("click", handler);
-    return () => {
-      document.removeEventListener("click", handler);
-    };
-  });
+  // let navRef = useRef();
+  // useEffect(() => {
+  //   let handler = (event) => {
+  //     if (!navRef.current.contains(event.target)) {
+  //       dispatch(setIsShow(false));
+  //       console.log(navRef.current);
+  //     }
+  //   };
+  //   document.addEventListener("click", handler);
+  //   return () => {
+  //     document.removeEventListener("click", handler);
+  //   };
+  // });
   return (
     <>
       {store.isShow && <ModalSideWrapper />}
       <div className="navigation">
-        <div className="navigation-wrapper" ref={navRef}>
+        <div className="navigation-wrapper">
           <div
             className={`navigation-content duration-200
             -translate-x-[200px] w-[200px] z-[999] ${

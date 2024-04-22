@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { FaUser } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import { HiOutlineUserCircle } from "react-icons/hi2";
@@ -8,11 +8,24 @@ import { setIsOpen, setIsShow } from "@/store/storeAction";
 
 const Header = ({ avatar }) => {
   const { store, dispatch } = React.useContext(StoreContext);
-
   const handleOpen = () => {
     dispatch(setIsOpen(!store.isOpen));
   };
 
+  //used for closing when clicked outside the component
+  let navRef = useRef();
+  useEffect(() => {
+    let handler = (event) => {
+      if (!navRef.current.contains(event.target)) {
+        dispatch(setIsOpen(false));
+        console.log(navRef.current);
+      }
+    };
+    document.addEventListener("click", handler);
+    return () => {
+      document.removeEventListener("click", handler);
+    };
+  });
   return (
     <>
       <header>
@@ -20,6 +33,7 @@ const Header = ({ avatar }) => {
         <div
           className={`avatar  ${store.isOpen && "border-2 border-blue-950"}`}
           onClick={() => handleOpen()}
+          ref={navRef}
         >
           {avatar}
         </div>

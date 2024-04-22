@@ -41,10 +41,10 @@
     @apply flex;
   }
   .toggle-menu {
-    @apply p-1 bg-gray-200 w-fit h-fit hover:cursor-pointer z-[999];
+    @apply p-1 bg-gray-200 w-fit h-fit hover:cursor-pointer z-[50];
   }
   .table-freeze {
-    @apply max-w-full max-h-[500px] overflow-auto;
+    @apply max-w-[1830px] max-h-[500px] overflow-auto mx-auto;
     table {
       @apply border-collapse min-w-max z-10 relative max-w-[1500px] overflow-auto;
       thead {
@@ -55,25 +55,28 @@
       }
 
       th:first-child {
-        @apply sticky min-w-[4rem] left-0 z-[2] bg-red-400;
+        @apply sticky max-w-[10rem] min-w-[4rem] left-0 z-[2] bg-red-400;
       }
       tr td:first-child {
-        @apply sticky min-w-[4rem] left-0 z-[2] bg-red-200;
+        @apply sticky max-w-[10rem] min-w-[4rem] left-0 z-[2] bg-red-200;
       }
       th:nth-child(2) {
-        @apply sticky min-w-[8rem] left-[64px] z-[2] bg-blue-500;
+        @apply sticky  left-[64px] z-[2] bg-blue-500;
       }
       tr td:nth-child(2) {
-        @apply sticky left-[64px] max-w-[2rem] bg-blue-300;
+        @apply sticky  left-[64px]  bg-blue-300;
       }
       th:nth-child(3) {
-        @apply sticky min-w-[8rem] left-[192px] z-[2] bg-blue-500;
+        @apply sticky  left-[224px] z-[2] bg-blue-500;
       }
       tr td:nth-child(3) {
-        @apply sticky max-w-[2rem] left-[192px]  bg-blue-300;
+        @apply sticky  left-[224px]  bg-blue-300;
       }
-      tr td {
-        @apply break-words;
+      th:not(:first-child) {
+        @apply max-w-[10rem] min-w-[8rem];
+      }
+      tr td:not(:first-child) {
+        @apply break-words max-w-[10rem] min-w-[10rem];
       }
 
       /* tr td:first-child {
