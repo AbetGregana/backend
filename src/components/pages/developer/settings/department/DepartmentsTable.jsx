@@ -17,7 +17,7 @@ const DepartmentsTable = ({ setIsAdd, setDataEdit }) => {
 
   let count = 1;
   return (
-    <div className=" relative">
+    <div className="site-table relative">
       <TableLoader />
       <FetchingSpinner />
       <table>

@@ -6,6 +6,7 @@ import ModalAddPosition from "./ModalAddPosition";
 import { IoAddCircleSharp } from "react-icons/io5";
 import { StoreContext } from "@/store/storeContext";
 import { setIsAdd, setIsSettingsOpen } from "@/store/storeAction";
+import Footer from "@/components/partials/Footer";
 
 const PositionList = () => {
   const { store, dispatch } = React.useContext(StoreContext);
@@ -20,7 +21,7 @@ const PositionList = () => {
   return (
     <>
       <Header avatar="AG" />
-      <div className="flex gap-3 min-h-[calc(100vh-70px)]">
+      <div className="flex gap-3 min-h-[calc(100vh-80px)]">
         <Navigation menu="settings" submenu="position" />
         <div className="p-4 pb-0 w-full">
           <div className="list-content">
@@ -29,11 +30,11 @@ const PositionList = () => {
               <IoAddCircleSharp size={15} />
               Add
             </button>
-
-            {/* <PositionTable /> */}
           </div>
+          <PositionTable />
         </div>
       </div>
+      <Footer />
       {store.isAdd && <ModalAddPosition setIsAdd={setIsAdd} />}
     </>
   );

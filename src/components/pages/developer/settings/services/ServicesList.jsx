@@ -6,6 +6,7 @@ import { IoAddCircleSharp } from "react-icons/io5";
 import { StoreContext } from "@/store/storeContext";
 import { setIsAdd, setIsSettingsOpen } from "@/store/storeAction";
 import ModalAddServices from "./ModalAddServices";
+import Footer from "@/components/partials/Footer";
 
 const ServicesList = () => {
   // const [isEdit, setIsEdit] = React.useState(false);
@@ -19,7 +20,7 @@ const ServicesList = () => {
   return (
     <>
       <Header avatar="AG" />
-      <div className="flex gap-3 min-h-[calc(100vh-70px)]">
+      <div className="flex gap-3 min-h-[calc(100vh-80px)]">
         <Navigation menu="settings" submenu="services" />
         <div className=" p-4 w-full">
           <div className="list-content">
@@ -29,9 +30,10 @@ const ServicesList = () => {
               Add
             </button>
           </div>
-          {/* <ServicesTable /> */}
+          <ServicesTable />
         </div>
       </div>
+      <Footer />
       {store.isAdd && <ModalAddServices setIsAdd={setIsAdd} />}
     </>
   );

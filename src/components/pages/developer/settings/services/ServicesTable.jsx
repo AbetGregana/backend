@@ -13,7 +13,7 @@ import {
 
 const ServicesTable = () => {
   return (
-    <div className="relative">
+    <div className="site-table relative">
       <TableLoader />
       <FetchingSpinner />
       <table>

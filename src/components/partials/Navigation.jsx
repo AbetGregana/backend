@@ -68,6 +68,7 @@ const Navigation = ({ menu, submenu }) => {
                             ? "border-l-2 border-[#1c74e9] text-[#1c74e9]"
                             : ""
                         }`}
+                        onClick={handleShow}
                       >
                         <Link to="/settings/departments">Departments</Link>
                       </li>
@@ -77,6 +78,7 @@ const Navigation = ({ menu, submenu }) => {
                             ? "border-l-2 border-accent text-[#1c74e9]"
                             : ""
                         }`}
+                        onClick={handleShow}
                       >
                         <Link to="/settings/services">Services</Link>
                       </li>
@@ -86,6 +88,7 @@ const Navigation = ({ menu, submenu }) => {
                             ? "border-l-2 border-[#1c74e9] text-[#1c74e9]"
                             : ""
                         }`}
+                        onClick={handleShow}
                       >
                         <Link to="/settings/position">Position</Link>
                       </li>

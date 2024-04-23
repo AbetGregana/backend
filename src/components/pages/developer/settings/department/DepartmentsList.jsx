@@ -7,6 +7,7 @@ import { departments } from "./data";
 import { IoAddCircleSharp } from "react-icons/io5";
 import { StoreContext } from "@/store/storeContext";
 import { setIsAdd, setIsSettingsOpen } from "@/store/storeAction";
+import Footer from "@/components/partials/Footer";
 const DepartmentsList = () => {
   const { store, dispatch } = React.useContext(StoreContext);
   const [dataEdit, setDataEdit] = React.useState(null);
@@ -22,7 +23,7 @@ const DepartmentsList = () => {
   return (
     <>
       <Header avatar="AG" />
-      <div className="flex gap-3 min-h-[calc(100vh-70px)]">
+      <div className="flex gap-3 min-h-[calc(100vh-80px)]">
         <Navigation menu="settings" submenu="departments" />
         <div className=" p-4 pb-0 w-full">
           <div className="list-content">
@@ -32,9 +33,10 @@ const DepartmentsList = () => {
               Add
             </button>
           </div>
-          {/* <DepartmentsTable setDataEdit={setDataEdit} /> */}
+          <DepartmentsTable setDataEdit={setDataEdit} />
         </div>
       </div>
+      <Footer />
       {store.isAdd && <ModalAddDepartments dataEdit={dataEdit} />}
     </>
   );
